@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var obj={
+            name:"khushbu",
+            age: 37
+        }
+
+        // adding new property
+       obj.place="Pune";
+       obj["address"]="park Ganga"
+       delete obj.age;          //delete is an operator
+
+        console.log(obj);
+
+        // Nested object
+
+        var obj4 = {
+            name:"khushbu",
+            address: {
+                pincode:455888,
+                city:"Pune"
+            }
+
+        }
+
+        var shallowCopyObj4={...obj4};
+        shallowCopyObj4.name="manish";
+        shallowCopyObj4.address.city="delhi";
+
+        console.log(obj4.name);
+        console.log(shallowCopyObj4.address);
+
+
+        //Shallow Copy And Deep Copy when main data is changed --Deep Copy
+        // Shallow Copy main not affected 
+
+        var shallowCopyObj4={...obj4};    // ShallowCopy Syntax   ...is called spread operator
+        shallowCopyObj4.name="manish";
+        shallowCopyObj4.address.city="delhi";
+
+        console.log(obj4.name);
+        console.log(shallowCopyObj4.address);
+
+
+        //Merging of Objects 
+        var obj5={
+            name:"ooooo"
+        }
+        var obj6 ={
+            age :23
+        }
+
+        var obj7 = {...obj5,
+            ...obj6};
+        console.log(obj7);
+
+        var obj8 = Object.assign({},obj5,obj6)
+            console.log(obj8);
+
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1, 2, 3, 4, 5];
+        var arr2 = ['a', 'b', 'r', 'e', 's'];
+
+        //using Map medthod
+
+        var arr1New = arr1.map((i) => i = i * i);
+        console.log(arr1New)
+
+        var arr2New = arr2.map(l => l = l.toUpperCase());
+
+        console.log(arr2New);
+
+
+        var sum = arr1.reduce((num, i) => num = (num + i) / 2);
+        console.log(sum);
+
+
+        var max = arr1.reduce((num, i) => Math.max(num, i))
+        console.log(max);
+
+
+        //foreach it returns nothing (undefined)
+
+        // arr2.forEach((i, num, arr) => arr[num] = i + 'HEllo')
+
+        // console.log(arr2)
+
+        arr2.forEach((i,num, arr) => console.log(arr[num]))
+
+        
+
+    
+
+
+    </script>
+</body>
+
+</html>

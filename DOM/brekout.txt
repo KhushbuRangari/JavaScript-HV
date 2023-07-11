@@ -1,0 +1,7 @@
+ask 1: Styles the container element by accessing it with getElementById() and modifying its background color and padding.
+Task 2: Styles the button element by accessing it with getElementById() by class and modifying its background color, text color, padding, border, border radius, and cursor.
+Task 3: Styles the box element by accessing it with querySelector() and modifying its background color.
+Task 4: Selects multiple elements with the class "paragraph" using querySelectorAll() and applies styles to each element, changing their text color and font size.
+Task 5: Adds the "highlight" class and removes the "box2" class from an element selected with querySelector(), demonstrating the use of classList.add() and classList.remove().
+Task 6: Selects elements with the "highlight" class using querySelectorAll() and applies styles to each element, adding a red border and padding.
+Task 7: Adds an event listener to a button with the ID "toggleBtn". When clicked, it selects an element with the class "box3" using querySelector(), and toggles the "highlighted-box" class on and off using classList.toggle(), allowing you to apply or remove styles dynamically.

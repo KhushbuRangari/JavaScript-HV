@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*
+            Problem 1:
+            You are given an array of numbers. Write a function findEvenNumber(numbers) that 
+            takes an array of numbers as a parameter and returns the first even number in the array. 
+            If no even number is found, the function should return undefined.
+            */
+
+
+        /* problem 2
+        You are given an array of strings representing names. Write a function findNameStartingWith(names,
+         letter) that takes an array of names and a letter as parameters. The function should return the first name in the array that starts with the given letter. If no name is found, the function should return null.*/
+        var arr1 = [1, 42, 12, 5, 11, 16, 8];
+
+        var arr2 = [12, 13, 13, 17]
+
+        function findEven(arr1) {
+
+
+            var i = arr1.find(function (i) { return i % 2 == 0; });
+
+            return i == null ? true : false;
+
+        }
+
+        // var ans = arr1.find( function(i){return i%2==0;} );
+        console.log(findEven(arr2));
+
+
+        // problem 2
+
+        var arr5 = ["Khushbu", "Reeta", "John", "Preeti"];
+        var ans = arr5.find(function (i) { return i.charAt(0) == 'R' });
+
+
+        console.log(ans);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coin Flip Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>Coin Flip Game</h1>
+    <p>Guess whether the coin will land on heads or tails!</p>
+    <div class="result"></div>
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="form-group">
+      <label for="guess">Your Guess:</label>
+      <select class="form-control" id="guess">
+        <option value="">Select</option>
+        <option value="heads">Heads</option>
+        <option value="tails">Tails</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" onclick="playRound()">Flip Coin</button>
+    <button class="btn btn-danger" onclick="resetGame()">Reset Game</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

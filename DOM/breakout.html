@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Styling Elements with DOM and JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin: 20px;
+        }
+
+        .paragraph {
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the DOM Styling Example</h1>
+
+    <div id="container">
+        <h2>Container</h2>
+        <p class="paragraph">This is a paragraph inside the container.</p>
+        <p class="paragraph">This is a paragraph inside the container.</p>
+        <p class="paragraph">This is a paragraph inside the container.</p>
+        <button id="btn">Click Me</button>
+        <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, atque?
+
+        </div>
+        <div class="box">Lorem ipsum dolor sit amet.</div>
+
+        <div class="box2">Lorem ipsum dolor sit amet.</div>
+    </div>
+
+
+    <script>
+
+
+        // ask 1: Styles the container element by accessing it with getElementById() and modifying its background color and padding.
+        var cont = document.getElementById("container")
+        cont.style.background = 'grey'
+        cont.style.paddingLeft = "20px"
+
+
+        //Task 2: Styles the button element by accessing it with getElementById() by class and modifying its
+        //  background color, text color, padding, border, border radius, and cursor.
+        var btn1 = document.getElementById("btn")
+        btn1.style.background = 'red'
+        btn1.style.color = 'pink'
+        btn1.style.border = '12px'
+        btn1.style.padding = '10px'
+        btn1.style.borderRadius = '4px'
+        btn1.style.cursor = 'pointer'
+
+        // Task 3: Styles the box element by accessing it with querySelector() and modifying its background color.
+        var boxEl = document.querySelector(".box")
+
+        boxEl.style.background = 'white'
+
+
+        // Task 4: Selects multiple elements with the class "paragraph" using querySelectorAll() and applies styles to each element, changing their text color and font size.
+        var p = document.querySelectorAll(".paragraph")
+        for (var i in p) {
+            p[i].style.color = 'pink'
+            p[i].style.fontSize = '13px'
+        }
+
+        // Task 5: Adds the "highlight" class and removes the "box2" 
+        // class from an element selected with querySelector(),
+        //  demonstrating the use of classList.add() and classList.remove().
+        const element = document.querySelector('.box2');
+          element.classList.add('highlight');
+         element.classList.remove('box2');
+
+        //  Task 6: Selects elements with the "highlight" class using querySelectorAll() and applies styles to each element, adding a red border and padding.
+        var hig = document.querySelectorAll(".highlight")
+       for (const i in hig) {
+            hig[i].style.border="red"
+       }
+
+    </script>
+</body>
+
+</html>

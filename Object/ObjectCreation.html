@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var obj1 = {
+            name: "Khushbu",
+            age: 37,
+            designation: "Engineer"
+        }
+        console.log(obj1);
+
+
+        // const calculator={
+        //     add: function (a,b) {
+        //         return a+b;
+        //     },
+        //     subtract: function(a,b){
+        //         return a-b
+        //     }
+        // }
+        const calculator = {
+            add(a, b) {
+                return a + b
+            },
+            subtract(a, b) {
+                return a - b
+            }
+        }
+        console.log(calculator.add(6, 9));
+        console.log(calculator.subtract(7, 3));
+
+        const obj3 = {
+           sub: (a,b) => {
+                return a-b
+            }
+        }
+        console.log(obj3.sub(10,4));
+
+
+        // adding new property
+    </script>
+</body>
+
+</html>

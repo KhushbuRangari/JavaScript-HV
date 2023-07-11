@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var rows = [];
+        var cols = [];
+        var smallArr = [];
+        // var valid = false;
+        var sudoku =[
+                  ["5", "3", ".", ".", "7", ".", ".", ".", "."]
+
+                , ["6", ".", ".", "1", "9", "5", ".", ".", "."]
+
+                , [".", "9", "8", ".", ".", ".", ".", "6", "."]
+
+                , ["8", ".", ".", ".", "6", ".", ".", ".", "3"]
+
+                , ["4", ".", ".", "8", ".", "3", ".", ".", "1"]
+
+                , ["7", ".", ".", ".", "2", ".", ".", ".", "6"]
+
+                , [".", "6", ".", ".", ".", ".", "2", "8", "."]
+
+                , [".", ".", ".", "4", "1", "9", ".", ".", "5"]
+
+                , [".", ".", ".", ".", "8", ".", ".", "7", "9"]]
+
+
+
+        // [
+        //     ["2", ".", "3"],
+        //     ["7", ".", "1"],
+        //     [".", "2", "5"]
+        // ]
+
+        // for rows
+        for (let j = 0; j < sudoku.length; j++) {
+            for (let i = 0; i < sudoku.length; i++) {
+                const element1 = sudoku[j][i];
+                if (element1 != ".") {
+                    document.write(element1)
+                    rows.push(element1);
+                }
+
+            }
+        }
+
+        // for columns
+        for (let i = 0; i < sudoku.length; i++) {
+            for (let j = 0; j < sudoku.length; j++) {
+                const element2 = sudoku[j][i];
+
+                if (element2 != ".") {
+
+
+                    console.log(element2);
+                    document.write(element2)
+                    cols.push(element2);
+                }
+
+            }
+
+        }
+
+
+        // for box
+        for (let box = 0; box < 9; box++) {
+            const boxArr=[];
+            const startRow = 
+            
+        }
+
+
+        function isValidRow(rows) {
+            var valid = true;
+            for (let i = 0; i < rows.length; i++) {
+                for (let j = i + 1; j < rows.length; j++) {
+                    if (rows[i] == rows[j]) {
+                        valid = false;
+
+                    }
+
+                }
+
+            }
+            return valid;
+        }
+
+        var check = isValidRow(rows);
+
+
+        console.log(check);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!-- Description: Consider a Loyalty Application for a Small Retailer, where data is stored in array of objects -
+
+customerID, customerName, totalBillingAmount
+
+A Retailer would want select customers who have the total Billing amount more than Rs. 3000/-
+
+Write a program using your JavaScript Skills to print the list of Such Customer Names along with their purchase details. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Application</title>
+</head>
+
+<body>
+    <h1>Loyalty Application</h1>
+
+
+    <script>
+
+
+        var customer = [
+            [1, 'Rajesh',200],
+            [2, 'Chandan', 100000],
+            [3, 'Vivek', 30000],
+            [4, 'Rahul', 1000]
+        ];
+
+
+      
+        for (let i = 0; i < customer.length; i++) {
+            for (let j = 0; j < customer.length-1; j++) {
+                if (customer[i][2] > 3000) {
+                    document.write(customer[i][j]+"<br>");
+                }
+            }      
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .score {
+    margin-bottom: 20px;
+  }
+  
+  .result {
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    margin-top: 10px;
+  }
+  
