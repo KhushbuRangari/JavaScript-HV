@@ -1,0 +1,477 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+
+    <style>
+        #div-header {
+            display: none;
+            border: 3px solid black;
+            border-radius: 2px;
+            width: 700px;
+            margin-left: 200px;
+        }
+
+        #strtBtn {
+            border: 2px solid grey;
+            background-color: black;
+            color: white;
+            width: 90px;
+            height: 30px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-left: 500px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button id="strtBtn" onclick="startQuiz()">Start Quiz</button>
+
+        <div id="div-header">
+
+        </div>
+
+
+        <h3 id="disp" style="color:green"> </h3>
+        <h4 id="error" style="color:red"> </h4>
+        <button id="btn" onclick="selectQues()" style="width: 80px;height: 20px; margin-left: 200px;">next</button>
+    
+    
+
+    </div>
+
+
+
+  
+
+    <script>
+        var quiz = [
+            {
+                qNo: "1",
+                ques: "Which Command is used to show limited number of commits?",
+                options: {
+                    op1: "git fetch",
+                    op2: "git log -n",
+                    op3: "git config",
+                    op4: "git status"
+                },
+                ans: "git log -n"
+            },
+            {
+                qNo: "2",
+                ques: "Which command defines the author email to be used for all commits by the current user.",
+                options: {
+                    op1: "git clean -f",
+                    op2: "git config --global user.email",
+                    op3: "git merge --no-ff",
+                    op4: "git email--amend"
+                },
+                ans: "git config --global user.email"
+            },
+            {
+                qNo: "3",
+                ques: " ____________ command is useful for getting a high-level overview of the project history.",
+                options: {
+                    op1: "git log --oneline",
+                    op2: "git reset --hard",
+                    op3: "git log --author=''",
+                    op4: "git rebase"
+                },
+                ans: "git log --oneline"
+            },
+            {
+                qNo: "4",
+                ques: "___________________ removes untracked files from your working directory.",
+                options: {
+                    op1: " git commit",
+                    op2: "git clean -f",
+                    op3: "git clean",
+                    op4: "git reset"
+                },
+                ans: "git clean"
+            },
+            {
+                qNo: "5",
+                ques: "Which command creates an empty Git repository in the specified directory?",
+                options: {
+                    op1: "git reset",
+                    op2: "git log ",
+                    op3: "git init",
+                    op4: "git init --bare"
+                },
+                ans: "git init"
+            },
+            {
+                qNo: "6",
+                ques: " Command to download all the objects and references from a specified repository",
+                options: {
+                    op1: "git fetch",
+                    op2: "git log -n",
+                    op3: "git help",
+                    op4: "git log -n"
+                },
+                ans: "git fetch"
+            }
+        ]
+        // var d = document.getElementById("div-header");
+        var answ;
+        var selectIndex;
+        var radioButtons = [];
+
+        function startQuiz() {
+
+            var selectIndex = Math.floor(Math.random() * quiz.length)
+            var di = document.getElementById("div-header");
+            di.style.display = "block";
+
+            quizfetches(selectIndex)
+
+        }
+
+
+
+        function quizfetches(index) {
+            var d = document.getElementById("div-header");
+
+            document.getElementById("strtBtn").style.display = "none"
+            d.innerHTML = `Question no ${quiz[index].qNo}`
+
+            var que = document.createElement("p")
+
+            var data = document.createTextNode(quiz[index].ques)
+
+            que.appendChild(data)
+            d.appendChild(que)
+            var list = document.createElement("ul")
+            const element = quiz[index].options;
+
+            for (const key in element) {
+                // console.log(key, element[key]);
+                var x = document.createElement("input");
+                x.setAttribute("type", "radio")
+                var y = document.createElement("label");
+                var br = document.createElement("br")
+                x.setAttribute("id", key)
+                x.setAttribute("name", "rad");
+                y.setAttribute("for", key)
+                y.innerHTML = element[key];
+                x.setAttribute("value", element[key])
+                d.appendChild(x);
+                d.appendChild(y);
+                d.appendChild(br);
+
+
+            }
+
+
+            return quiz[index].ans;
+
+        }
+
+
+        function selectQues() {
+            var index = Math.floor(Math.random() * quiz.length)
+            var ans = quizfetches(index)
+
+            let radioButtons = document.getElementsByName("rad");
+
+
+            for (let radio of radioButtons) {
+
+                console.log(radio.checked);
+                if (radio.checked) {
+
+                    document.getElementById("disp").innerHTML = "The radio button is selected and it's value is " + radio.value;
+                }
+            }
+
+            // const element = quiz[index].options;
+
+            // let radioButtons = document.getElementsByName("rad");
+
+
+            // for (let radio of radioButtons) {
+
+            //     console.log(radio.value);
+            //     if (radio.checked) {
+
+            //         document.getElementById("disp").innerHTML = "The radio button is selected and it's value is " + radio.value;
+            //     }
+            // }
+            //     if (document.getElementById(key).checked) {
+            //         if (document.getElementById(key).value == ans) {
+            //             document.getElementById("disp").innerHTML
+            //                 = document.getElementById(key).value
+            //                 + " radio button is checked";
+            //         }
+            //         else {
+            //             console.log("Wrong Answer");
+            //         }
+            //     }
+            //     else {   
+            //     document.getElementById("error").innerHTML   
+            //         = "You have not selected any season";   
+            // } 
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Quiz Application</title>
+
+    <style>
+        #div-header {
+            display: none;
+            border: 3px solid black;
+            border-radius: 2px;
+            width: 700px;
+            margin-left: 200px;
+        }
+
+        #strtBtn {
+            border: 2px solid grey;
+            background-color: black;
+            color: white;
+            width: 90px;
+            height: 30px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-left: 500px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row ">
+            <div class="col mx-5">
+                <div>
+                    <button id="strtBtn" onclick="startQuiz()">Start Quiz</button>
+                    <div id="div-header"></div>
+                    <div id="points"></div>
+                    <div id="stars"></div>
+                    <h3 id="disp" style="color:rgb(142, 145, 6);font-size: 15px; text-align: center;"></h3>
+                    <p id="message" style="margin-left: 30px;"></p>
+
+
+                    <h3 id="disp" style="color:green"></h3>
+                    <h4 id="error" style="color:red"></h4>
+                    <button id="btn" onclick="selectQues()"
+                        style="width: 80px;height: 50px; margin-left: 200px;">Next</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var quiz = [
+            {
+                qNo: "1",
+                ques: "Which Command is used to show limited number of commits?",
+                options: {
+                    op1: "git fetch",
+                    op2: "git log -n",
+                    op3: "git config",
+                    op4: "git status"
+                },
+                ans: "git log -n"
+            },
+            {
+                qNo: "2",
+                ques: "Which command defines the author email to be used for all commits by the current user.",
+                options: {
+                    op1: "git clean -f",
+                    op2: "git config --global user.email",
+                    op3: "git merge --no-ff",
+                    op4: "git email--amend"
+                },
+                ans: "git config --global user.email"
+            },
+            {
+                qNo: "3",
+                ques: " ____________ command is useful for getting a high-level overview of the project history.",
+                options: {
+                    op1: "git log --oneline",
+                    op2: "git reset --hard",
+                    op3: "git log --author=''",
+                    op4: "git rebase"
+                },
+                ans: "git log --oneline"
+            },
+            {
+                qNo: "4",
+                ques: "___________________ removes untracked files from your working directory.",
+                options: {
+                    op1: " git commit",
+                    op2: "git clean -f",
+                    op3: "git clean",
+                    op4: "git reset"
+                },
+                ans: "git clean"
+            },
+            {
+                qNo: "5",
+                ques: "Which command creates an empty Git repository in the specified directory?",
+                options: {
+                    op1: "git reset",
+                    op2: "git log ",
+                    op3: "git init",
+                    op4: "git init --bare"
+                },
+                ans: "git init"
+            },
+            {
+                qNo: "6",
+                ques: " Command to download all the objects and references from a specified repository",
+                options: {
+                    op1: "git fetch",
+                    op2: "git log -n",
+                    op3: "git help",
+                    op4: "git log -n"
+                },
+                ans: "git fetch"
+            }
+        ]
+
+        var radioButtons = [];
+        var score = 0;
+        var noOfQuestion = 0;
+
+        var points = document.getElementById("points");
+        var scr = document.getElementById("stars");
+        var divHeader = document.getElementById("div-header");
+
+        function startQuiz() {
+            var selectIndex = Math.floor(Math.random() * quiz.length);
+            var divHeader = document.getElementById("div-header");
+            divHeader.style.display = "block";
+
+            quizfetches(selectIndex);
+        }
+
+        function quizfetches(index) {
+
+            document.getElementById("strtBtn").style.display = "none";
+            divHeader.innerHTML = `Question no ${quiz[index].qNo}`;
+            noOfQuestion++;
+            var question = document.createElement("p");
+            var questionText = document.createTextNode(quiz[index].ques);
+            question.appendChild(questionText);
+            divHeader.appendChild(question);
+
+            console.log(question);
+            console.log(quiz[index].ans);
+
+            var optionsList = document.createElement("ul");
+            const options = quiz[index].options;
+
+            for (const key in options) {
+                var radioButton = document.createElement("input");
+                radioButton.setAttribute("type", "radio");
+                radioButton.setAttribute("name", "rad");
+                radioButton.setAttribute("id", key);
+                radioButton.setAttribute("value", options[key]);
+                radioButtons.push(radioButton); // Store radio buttons in the global array
+
+                var label = document.createElement("label");
+                label.setAttribute("for", key);
+                label.innerHTML = options[key];
+
+                var br = document.createElement("br");
+
+                divHeader.appendChild(radioButton);
+                divHeader.appendChild(label);
+                divHeader.appendChild(br);
+            }
+
+            return quiz[index].ans;
+        }
+        var ans;
+        var index;
+        function selectQues() {
+            index = Math.floor(Math.random() * quiz.length);
+
+            if (noOfQuestion <= quiz.length) {
+
+                console.log(noOfQuestion);
+                ans = quizfetches(index);
+
+                for (let radio of radioButtons) {
+
+
+                    if (radio.checked) {
+
+                        if (radio.value == ans) {
+                            // console.log("radio value :" + radio.value + " right ans is " + ans);
+                            // document.getElementById("disp").innerHTML="Right Answer"
+                            score++;
+                            updateStars();
+                        }
+                        else {
+                            document.getElementById("disp").innerHTML = "Wrong! Correct answer :" + ans
+                        }
+                    }
+
+
+                }
+
+
+            }
+            else {
+                // radioButton.innerHTML = "";
+                divHeader.innerHTML = `Quiz completed! Your score is ${score} out of ${quiz.length}.`;
+                document.getElementById("disp").textContent = "";
+            }
+
+        }
+
+        function updateStars() {
+
+            const stars = Math.floor(score / 10);
+            let starsHtml = '';
+
+            for (let i = 0; i < stars; i++) {
+                starsHtml += '<i class="fa 	fas fa-star" style="font-size:30px;color:yellow"></i>';
+
+            }
+
+            points.innerHTML = `Your Score : ${score}`;
+            scr.innerHTML = starsHtml;
+        }
+    </script>
+</body>
+
+</html>
